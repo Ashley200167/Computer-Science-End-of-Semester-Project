@@ -1,4 +1,4 @@
-# import the libraries to crate games
+# import the libraries to create games
 import pygame, sys, random
 from pygame.locals import *
 import time
@@ -24,6 +24,38 @@ GREEN = (0, 255, 0)
 BLACK = (0, 0, 0)
 
 paused = False
+
+#load the character
+Character = pygame.image.load('assassin.jpg')
+
+#beginning position of character
+Characterx = 580
+Charactery = 780
+
+
+gameOver = False
+while gameOver == False:
+
+#move the character
+    if pressed[pygame.K_UP]:
+        caty = caty - 5
+        if caty <= 0:
+            caty = 0
+    if pressed[pygame.K_DOWN]:
+        caty = caty + 5
+        if caty >= 300:
+            caty = 300
+    if pressed[pygame.K_LEFT]:
+        catx = catx - 5
+        if catx <= 0:
+            catx = 0
+    if pressed[pygame.K_RIGHT]:
+        catx = catx + 5
+        if catx >= 350:
+            catx = 350
+
+#update the positions
+    DISPLAYSURF.blit(Character, (Characterx, Charactery))
 
 pong
 if puck.bottom >= 600 and puck.left >= paddle1.left and puck.right <= paddle1.right:
