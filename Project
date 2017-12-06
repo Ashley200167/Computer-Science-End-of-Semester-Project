@@ -14,7 +14,7 @@ fpsClock = pygame.time.Clock()
 surface_width = 800
 surface_height = 600
 DISPLAYSURF = pygame.display.set_mode((surface_width, surface_height))
-pygame.display.set_caption('bouncing ball')
+pygame.display.set_caption('Maze')
 
 # define colors in RGB
 WHITE = (255, 255, 255)
