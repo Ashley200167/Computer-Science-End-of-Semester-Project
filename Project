@@ -24,3 +24,8 @@ GREEN = (0, 255, 0)
 BLACK = (0, 0, 0)
 
 paused = False
+
+pong
+if puck.bottom >= 600 and puck.left >= paddle1.left and puck.right <= paddle1.right:
+            puck_vy = -puck_vy
+            soundObj.play()
