@@ -15,7 +15,7 @@ surface_width = 600
 surface_height = 500
 DISPLAYSURF = pygame.display.set_mode((surface_width, surface_height))
 pygame.display.set_caption('Maze')
-
+screen = pygame.display.set_mode([600,500])
 # define colors in RGB
 WHITE = (255, 255, 255)
 BLUE = (0, 0, 255)
@@ -23,6 +23,7 @@ RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLACK = (0, 0, 0)
 
+screen.fill(WHITE)
 paused = False
 
 #Walls of maze
@@ -90,16 +91,17 @@ class Walls (object):
         return walls
 #load the character
 Character = pygame.image.load('assassin.jpg')
+Character = pygame.transform.scale(Character, (50, 50))
 
 
-pressed = pygame.key.get_pressed()
 #beginning position of character
-Characterx = 580
-Charactery = 480
+Characterx = 550
+Charactery = 450
 
 
 gameOver = False
 while gameOver == False:
+    pressed = pygame.key.get_pressed()
 
 #move the character
     if pressed[pygame.K_UP]:
@@ -108,16 +110,16 @@ while gameOver == False:
             Charactery = 0
     if pressed[pygame.K_DOWN]:
         Charactery = Charactery + 5
-        if Charactery >= 300:
-            Charactery = 300
+        if Charactery >= 450:
+            Charactery = 450
     if pressed[pygame.K_LEFT]:
         Characterx = Characterx - 5
         if Characterx <= 0:
             Characterx = 0
     if pressed[pygame.K_RIGHT]:
         Characterx = Characterx + 5
-        if Characterx >= 350:
-            Characterx = 350
+        if Characterx >= 550:
+            Characterx = 550
 
 #update the positions
     DISPLAYSURF.blit(Character, (Characterx, Charactery))
