@@ -121,3 +121,12 @@ while gameOver == False:
 
 #update the positions
     DISPLAYSURF.blit(Character, (Characterx, Charactery))
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            gameOver = True
+            pygame.quit()
+            sys.exit()
+
+    #update the display at the properspeed
+    pygame.display.update()
+    fpsClock.tick(FPS)
