@@ -11,8 +11,8 @@ FPS = 45
 fpsClock = pygame.time.Clock()
 
 # setup the canvas or surface on which objects will be displayed
-surface_width = 800
-surface_height = 600
+surface_width = 600
+surface_height = 500
 DISPLAYSURF = pygame.display.set_mode((surface_width, surface_height))
 pygame.display.set_caption('Maze')
 
@@ -24,15 +24,6 @@ GREEN = (0, 255, 0)
 BLACK = (0, 0, 0)
 
 paused = False
-
-#load the character
-Character = pygame.image.load('assassin.jpg')
-
-
-pressed = pygame.key.get_pressed()
-#beginning position of character
-Characterx = 580
-Charactery = 780
 
 #Walls of maze
 class Walls (object):
@@ -97,6 +88,15 @@ class Walls (object):
         # This wall blocks off the central box area, as it is a trap for ghosts
         walls.append(pygame.Rect((268, 248), (112, 64)))
         return walls
+#load the character
+Character = pygame.image.load('assassin.jpg')
+
+
+pressed = pygame.key.get_pressed()
+#beginning position of character
+Characterx = 580
+Charactery = 480
+
 
 gameOver = False
 while gameOver == False:
