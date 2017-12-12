@@ -23,12 +23,12 @@ RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLACK = (0, 0, 0)
 
+
+#When the game is not paused
 screen.fill(WHITE)
 paused = False
 
-
 #Walls
-
 
 
 
@@ -51,19 +51,19 @@ while gameOver == False:
 
 #move the character
     if pressed[pygame.K_UP]:
-        Charactery = Charactery - 5
+        Charactery = Charactery - 2
         if Charactery <= 0:
             Charactery = 0
     if pressed[pygame.K_DOWN]:
-        Charactery = Charactery + 5
+        Charactery = Charactery + 2
         if Charactery >= 450:
             Charactery = 450
     if pressed[pygame.K_LEFT]:
-        Characterx = Characterx - 5
+        Characterx = Characterx - 2
         if Characterx <= 0:
             Characterx = 0
     if pressed[pygame.K_RIGHT]:
-        Characterx = Characterx + 5
+        Characterx = Characterx + 2
         if Characterx >= 550:
             Characterx = 550
 
