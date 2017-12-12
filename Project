@@ -18,7 +18,7 @@ pygame.display.set_caption('Maze')
 screen = pygame.display.set_mode([600,500])
 # define colors in RGB
 WHITE = (255, 255, 255)
-BLUE = (0, 0, 255)
+BLUE = (0, 0, 204)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLACK = (0, 0, 0)
@@ -29,8 +29,6 @@ screen.fill(WHITE)
 paused = False
 
 #Walls
-
-
 
 
 
