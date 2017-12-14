@@ -2,9 +2,11 @@
 import pygame, sys, random
 from pygame.locals import *
 import time
+import time
 
 # initialize the game
 pygame.init()
+clock = pygame.time.Clock()
 
 # define the animation speed in frames per second
 FPS = 45
@@ -36,11 +38,15 @@ paused = False
 #load the character
 Character = pygame.image.load('assassin.jpg')
 Character = pygame.transform.scale(Character, (50, 50))
+Coin = pygame.image.load('unnamed.png')
 
 
 #beginning position of character
 Characterx = 550
 Charactery = 450
+
+Coinx = random
+Coiny = random
 
 
 gameOver = False
