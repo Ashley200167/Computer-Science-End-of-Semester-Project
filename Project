@@ -2,11 +2,10 @@
 import pygame, sys, random
 from pygame.locals import *
 import time
-import time
 
 # initialize the game
 pygame.init()
-clock = pygame.time.Clock()
+#clock = pygame.time.Clock()
 
 # define the animation speed in frames per second
 FPS = 45
@@ -128,7 +127,34 @@ while gameOver == False:
         if Characterx >= 550:
             Characterx = 550
 
-#update the positions
+
+#update the position
+    DISPLAYSURF.fill(WHITE)
+    DISPLAYSURF.blit(Character, (Characterx, Charactery))
+    for wall in walls:
+        pygame.draw.rect(DISPLAYSURF, BLUE, wall)
+
+ # check for user-initiated events
+    for event in pygame.event.get():
+        # pause if space bar pressed
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+            paused = not paused
+
+
+        # check for game over (closing the window)
+
+        if event.type == pygame.QUIT:
+            # exit gracefully
+            gameOver = True
+            pygame.quit()
+            sys.exit()
+
+    # update the display at the proper speed
+    pygame.display.update()
+    fpsClock.tick(FPS)
+
+
+'''update the positions
     DISPLAYSURF.blit(Character, (Characterx, Charactery))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -138,4 +164,4 @@ while gameOver == False:
 
     #update the display at the properspeed
     pygame.display.update()
-    fpsClock.tick(FPS)
+    fpsClock.tick(FPS)'''
